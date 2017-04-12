@@ -36,7 +36,8 @@
 | 이름 | 속성 |
 |--------|--------|
 |id|integer|
-|location|string|
+|localX|string|
+|localY|string|
 |name|string|
 |menuimg|img|
 |category|string|
@@ -75,3 +76,6 @@ paperclip gem을 이용해서 이미지를 추가함.
 생각이 바꼈다. 지도를 보여주고 위치를 보여주기 보다는 목록을 보여주고 클릭을하면 지도로 위치를 보여주는!
 
 #### omniauth facebook
+
+1. devise
+2. 회원가입, 로그인 기능 -> omniauth facebook
