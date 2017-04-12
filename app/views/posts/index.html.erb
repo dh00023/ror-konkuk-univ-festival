@@ -18,7 +18,7 @@
         <td><%= post.name %></td>
         <td><%= post.local %></td>
         <td><%= post.category %></td>
-        <td><%= image_tag @post.menuimg.url %>
+        <td><%= image_tag post.menuimg.url %>
 </td>
         <td><%= link_to 'Show', post %></td>
         <td><%= link_to 'Edit', edit_post_path(post) %></td>
