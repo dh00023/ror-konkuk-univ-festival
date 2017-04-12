@@ -4,7 +4,7 @@
 - 2차 5월 1일 ~ 5월 14일
 
 
-### 4월 11일 기획
+### 4월 11일 기획 + 기본뼈대 생성
 
 #### 컨텐츠
 - 학과별 주점()
@@ -26,44 +26,23 @@
 
 #### DB
 
-1. 주점 - 과이름/동아리이름 위치 메뉴 사진
+1. 과이름/동아리이름
+2. 위치
+3. 메뉴(사진)
+4. 카테고리(주점, 낮부스, 주변주점 / 해장국)
+(주변주점이랑 협상을 해서 쿠폰같은거 나오도록 하면 더 좋을거같음.)
+5. 특징 ( 안주저렴, 합석, 컨셉같은거..)
 
 | 이름 | 속성 |
 |--------|--------|
 |id|integer|
 |location|string|
 |name|string|
-|menu|img|
-|property_id|integer|
+|menuimg|img|
+|category|string|
+|feature|string|
 
-2. 낮부스 - 과이름/동아리이름 위치
-
-| 이름 | 속성 |
-|--------|--------|
-|id|integer|
-|location|string|
-|name|string|
-|menu|img|
-|property_id|integer|
-
-3. 주변주점 / 해장국 - 위치 / 이름 / 메뉴사진(주변주점이랑 협상을 해서 쿠폰같은거 나오도록 하면 더 좋을거같음.)
-
-| 이름 | 속성 |
-|--------|--------|
-|id|integer|
-|location|string|
-|name|string|
-|menu|img|
-|property_id|integer|
-
-4. 특징(1:N)
-
-| 이름 | 속성 |
-|--------|--------|
-|id|integer|
-|concept|string|
-
-### 다음 지도 API
+#### 다음 지도 API
 
 [Daum Developers](https://developers.daum.net/)에서 서비스를 생성후 API를 발급받는다.
 [Maps API](http://apis.map.daum.net/web/guide/)에서 guide, sample, docs를 보고 필요에 따라서 만든다.
@@ -72,3 +51,31 @@
 - 다른 이미지로 마커생성
 - 커스텀 오버레이
 - 카테고리 별 보기(근처 술집 정도만!)
+
+#### Paperclip
+
+paperclip gem을 이용해서 이미지를 추가함.
+
+### 4월 12일 (페이지구성 + Searchkick + 다음지도 적용 + devise(omniauth facebook))
+
+#### 페이지구성
+
+0. 전체 : 네브바, footer
+1. post index : 축제 타임테이블구성 + 버튼(낮부스, 주점, 주변술집, 번개) - 고민중(모바일 버튼 낮밤에 따라 다르게 나오는 것)
+2. post search - 카테고리 + 특징으로 구별해서 목록을 보여주는 페이지(이미지, 과주점 or 동아리부스 이름정도)
+3. post show - 자세한 정보 및 위치
+4. devise index - 번개버튼누르면 로그인하도록!
+5. meeting index - 번개로그인하면 회원가입한 사람들목록 + 채팅기능
+
+#### 다음지도
+
+1. 중심 : 건국대학교 서울캠퍼스(37.5419759,127.0745398)
+2. 확대정도 : 3 (2.5가 딱 적당한데 없다ㅠㅠ)
+
+생각이 바꼈다. 지도를 보여주고 위치를 보여주기 보다는 목록을 보여주고 클릭을하면 지도로 위치를 보여주는!
+
+#### omniauth facebook
+
+#### searchkick
+0. 검색내용을 form에 입력받아서 검색키워드를 지정하는 기능구현이 필요하다.
+1. 검색한 결과를 json으로 map API에 넘겨서 좌표 마커를 불러오는 기능이 필요하다.
