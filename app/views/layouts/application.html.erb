@@ -9,6 +9,15 @@
   </head>
 
   <body>
+  <% if !current_user %>
+ 	  	<%= link_to 'login',  new_user_session_path %> |
+		  <%= link_to 'sign up',  new_user_registration_path %> 
+      <%= link_to "Sign in with Facebook", user_facebook_omniauth_authorize_path %>
+	<% else %>
+		<%= current_user.email %>
+		<%= link_to 'logout',  destroy_user_session_path, method: :delete %>
+	<% end %>
+
     <%= yield %>
   </body>
 </html>
