@@ -1,9 +1,6 @@
-class User::OmniauthCallbacksController < Devise::OmniauthCallbacksController
-   def facebook
-    if request.env["omniauth.auth"].info.email.blank?
-      redirect_to "/users/auth/facebook?auth_type=rerequest&scope=email"
-    end
- 
+class OmniauthCallbacksController < Devise::OmniauthCallbacksController
+  
+  def facebook
     # You need to implement the method below in your model (e.g. app/models/user.rb)
     @user = User.from_omniauth(request.env["omniauth.auth"])
 

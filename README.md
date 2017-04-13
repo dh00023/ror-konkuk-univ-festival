@@ -75,10 +75,18 @@ paperclip gem을 이용해서 이미지를 추가함.
 
 생각이 바꼈다. 지도를 보여주고 위치를 보여주기 보다는 목록을 보여주고 클릭을하면 지도로 위치를 보여주는!
 
-#### omniauth facebook
+#### devise
 1. devise
-2. 회원가입, 로그인 기능 -> omniauth facebook
 
 #### searchkick
 0. 검색내용을 form에 입력받아서 검색키워드를 지정하는 기능구현이 필요하다.
 1. 검색한 결과를 json으로 map API에 넘겨서 좌표 마커를 불러오는 기능이 필요하다.
+
+### 4월 13일
+
+#### omniauth facebook
+
+1. 페이스북 로그인 기능
+
+#### figaro
+1. SECRET_KEY와 ID를 보안을 위해서 figaro gem사용.
