@@ -90,3 +90,11 @@ paperclip gem을 이용해서 이미지를 추가함.
 
 #### figaro
 1. SECRET_KEY와 ID를 보안을 위해서 figaro gem사용.
+
+### 4월 16일
+
+#### private_pub(thin) - 채팅
+
+채팅기능을 만들기 위해서 `private_pub`, `thin` gem을 사용 할 것이다.
+우선적으로 프로젝트에 적용하기전에 따로 만들어 보았다.
+[chatty](http://josephndungu.com/tutorials/gmail-like-chat-application-in-ruby-on-rails)를 참조했다.
