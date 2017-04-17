@@ -17,15 +17,20 @@
   </div>
 
   <div class="field">
-    <%= f.label :local %>
-    <%= f.text_field :local %>
+    <%= f.label :x %>
+    <%= f.number_field :x , step: :any %>
+  </div>
+
+  <div class="field">
+    <%= f.label :y %>
+    <%= f.number_field :y , step: :any %>
   </div>
 
   <div class="field">
     <%= f.label :type %>
     <%= f.text_field :category %>
   </div>
-  
+
   <div class="field">
     <%= f.label :feature %>
     <%= f.text_field :feature %>

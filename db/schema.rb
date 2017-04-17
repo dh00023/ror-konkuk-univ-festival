@@ -33,7 +33,8 @@ ActiveRecord::Schema.define(version: 20170417024120) do
 
   create_table "posts", force: :cascade do |t|
     t.string   "name"
-    t.string   "local"
+    t.float    "x"
+    t.float    "y"
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
     t.string   "menuimg_file_name"

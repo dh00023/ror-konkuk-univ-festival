@@ -8,10 +8,10 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item active">
-          <%= link_to "낮부스", new_user_session_path ,class: "nav-link"%>
+          <%= link_to "낮부스", search_posts_path(search: "낮부스", fields: [:category]), class: "nav-link"%>
         </li>
         <li class="nav-item active">
-          <%= link_to "밤주점", new_user_session_path ,class: "nav-link"%>
+          <%= link_to "밤주점", search_posts_path(search: "밤주점"), class: "nav-link"%>
         </li>
         <% if user_signed_in? %>
           <li class="nav-item active">
