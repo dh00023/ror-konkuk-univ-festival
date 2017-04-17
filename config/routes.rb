@@ -3,15 +3,9 @@ Rails.application.routes.draw do
   resources :posts
   get 'search'=>'posts#search'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  authenticated :user do
-    root 'users#index'
-  end
-
-  unauthenticated :user do
-    devise_scope :user do
-      get "/" => "devise/sessions#new"
-    end
-  end
+  
+  get 'lighting'=>'users#index'
+  root 'posts#index'
 
   resources :conversations do
     resources :messages

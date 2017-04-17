@@ -105,3 +105,8 @@ paperclip gem을 이용해서 이미지를 추가함.
 #### bootstrap4(alpha)
 
 부트스트랩4를 적용시켜 채팅기능을 실제로 적용시켰다.
+
+- navbar
+- routes
+
+자세한 디자인과 DB는 미연이와 민우오빠가!
