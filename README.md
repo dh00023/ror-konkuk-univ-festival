@@ -112,12 +112,16 @@ paperclip gem을 이용해서 이미지를 추가함.
 ### 4월 17일
 
 #### private_pub(thin) - 채팅
-#### bootstrap4(alpha)
 
-부트스트랩4를 적용시켜 채팅기능을 실제로 적용시켰다.
+채팅기능 프로젝트에 적용(Rails 5 , 최신 gem)
+
+#### bootstrap4(alpha)
 
 - navbar
 - routes
+- 채팅 페이지
+- show 페이지
+- search 페이지
 
 #### searchkick
 #### daum map api

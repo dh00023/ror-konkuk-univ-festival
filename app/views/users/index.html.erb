@@ -1,24 +1,25 @@
-<div class="row">
-  <!-- Table -->
-  <table class="table">
-    <thead>
-      <tr>
-        <th>#</th>
-        <th>사진</th>
-        <th>이름</th>
-        <th>채팅</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @users.each do |user| %>
+<div class="container">
+  <div class="row">
+    <!-- Table -->
+    <table class="table  table-sm">
+      <thead>
         <tr>
-          <td><%= user.id %></td>
-          <td><%= image_tag user.image %></td>
-          <td><%= user.username %></td>
-          <td><%= link_to "Send Message", "#", class: "btn btn-outline-success start-conversation", "data-sid" => current_user.id, "data-rip" => user.id %></td>
+          <th>#</th>
+          <th>사용자</th>
+          <th></th>
+          <th></th>
         </tr>
-      <% end %>
-    </tbody>
-  </table>
+      </thead>
+      <tbody>
+        <% @users.each do |user| %>
+          <tr>
+            <td><%= user.id %></td>
+            <td><%= image_tag user.image %></td>
+            <td><%= user.username %></td>
+            <td><%= link_to "채팅하기", "#", class: "btn btn-outline-success start-conversation", "data-sid" => current_user.id, "data-rip" => user.id %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
 </div>
-<hr>
