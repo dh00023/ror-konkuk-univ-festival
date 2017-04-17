@@ -119,4 +119,10 @@ paperclip gem을 이용해서 이미지를 추가함.
 - navbar
 - routes
 
+#### 디플로이 할 때 수정해야될 것
+
+1. `application.yml` 이 올라가있음.  deploy할때 이 파일 삭제하고 `bundle exec figaro install`하기.
+2. facebook developer 웹 주소 - 앱 오빠나 미연이걸로 바꿔서 application.yml 키랑 ID바꿔서 하세여
+3. daum map api 웹 주소 바꾸기
+
 자세한 디자인과 DB는 미연이와 민우오빠가!
