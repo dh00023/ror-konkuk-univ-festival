@@ -10,7 +10,8 @@ class User < ApplicationRecord
   has_many :rooms
   has_many :reservations
   has_many :reviews
-
+  has_many :conversations, :foreign_key => :sender_id
+  
   def self.from_omniauth(auth)
     user = User.where(email: auth.info.email).first
 
@@ -19,7 +20,7 @@ class User < ApplicationRecord
     else
       where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
         user.provider = auth.provider
-        user.username = auth.info.email
+        user.username = auth.info.lastname
         user.uid = auth.uid
         user.email = auth.info.email
         user.image = auth.info.image

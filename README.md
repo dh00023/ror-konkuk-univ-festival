@@ -98,3 +98,10 @@ paperclip gem을 이용해서 이미지를 추가함.
 채팅기능을 만들기 위해서 `private_pub`, `thin` gem을 사용 할 것이다.
 우선적으로 프로젝트에 적용하기전에 따로 만들어 보았다.
 [chatty](http://josephndungu.com/tutorials/gmail-like-chat-application-in-ruby-on-rails)를 참조했다.
+
+### 4월 17일
+
+#### private_pub(thin) - 채팅
+#### bootstrap4(alpha)
+
+부트스트랩4를 적용시켜 채팅기능을 실제로 적용시켰다.
