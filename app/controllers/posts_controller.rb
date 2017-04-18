@@ -2,6 +2,9 @@ class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
   def search
     if params[:search].present?
+      if params[:search] == ""
+        params.delete[:search]
+      end
       @posts = Post.search(params[:search])
     else
       @posts = Post.all

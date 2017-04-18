@@ -1,7 +1,21 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Posts</h1>
-
+<%= form_tag search_posts_path, method: :get, class: "navbar-form navbar-right", role: "search" do |f|%>
+  <p>
+    <%= check_box_tag :search, "낮부스" %>
+    <%= label_tag :search, "낮부스" %>
+    <%= check_box_tag :search, "밤주점" %>
+    <%= label_tag :search, "밤주점" %>
+    <%= submit_tag "Search", name: nil, class: "btn btn-default" %>
+  </p>
+<% end %>
+<%= form_tag search_posts_path, method: :get, class: "navbar-form navbar-right", role: "search" do |f|%>
+  <p>
+    <%= text_field_tag :search , nil, valud: ""%>
+    <%= submit_tag "Search", name: nil, class: "btn btn-default" %>
+  </p>
+<% end %>
 <table>
   <thead>
     <tr>

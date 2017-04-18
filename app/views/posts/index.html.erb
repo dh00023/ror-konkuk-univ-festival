@@ -1,9 +1,2 @@
 <h1>오빠랑 미연이가 꾸밀곳~</h1>
 <%= image_tag('timetable.jpeg', class: "img-fluid") %>
-
-<%= form_tag search_posts_path, method: :get, class: "navbar-form navbar-right", role: "search" do %>
-  <p>
-    <%= text_field_tag :search, params[:search], class: "form-control" %>
-    <%= submit_tag "Search", name: nil, class: "btn btn-default" %>
-  </p>
-<% end %>
