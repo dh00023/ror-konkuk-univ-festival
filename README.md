@@ -112,12 +112,16 @@ paperclip gem을 이용해서 이미지를 추가함.
 ### 4월 17일
 
 #### private_pub(thin) - 채팅
-#### bootstrap4(alpha)
 
-부트스트랩4를 적용시켜 채팅기능을 실제로 적용시켰다.
+채팅기능 프로젝트에 적용(Rails 5 , 최신 gem)
+
+#### bootstrap4(alpha)
 
 - navbar
 - routes
+- 채팅 페이지
+- show 페이지
+- search 페이지
 
 #### searchkick
 #### daum map api
@@ -133,3 +137,8 @@ searchkick을 통해 DB에 저장된 좌표정보를 불러와 지도에 표시�
 4. DB저장할 때 카테고리 목록, 특징 저장할 단어 결정하기
 
 자세한 디자인과 DB는 미연이와 민우오빠가!
+
+
+### 4월 18일
+
+대략적인 디자인은 수정했다. 모바일을 기준으로 디자인을 적용시켰다.
