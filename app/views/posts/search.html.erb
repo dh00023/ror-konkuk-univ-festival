@@ -1,36 +1,55 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Posts</h1>
-<%= form_tag search_posts_path, method: :get, class: "navbar-form navbar-right", role: "search" do |f|%>
-  <p>
-    <%= check_box_tag :search, "안주 저렴" %>
-    <%= label_tag :search, "안주 저렴" %>
-    <%= check_box_tag :search, "안주 다양" %>
-    <%= label_tag :search, "안주 다양" %>
-    <%= check_box_tag :search, "술 저렴" %>
-    <%= label_tag :search, "술 저렴" %>
-    <%= check_box_tag :search, "술 다양" %>
-    <%= label_tag :search, "술 다양" %>
-    <%= submit_tag "Search", name: nil, class: "btn btn-default" %>
-  </p>
-<% end %>
-<%= form_tag search_posts_path, method: :get, class: "navbar-form navbar-right", role: "search" do |f|%>
-  <p>
-    <%= text_field_tag :search , nil, valud: ""%>
-    <%= submit_tag "Search", name: nil, class: "btn btn-default" %>
-  </p>
-<% end %>
-<table>
-  <thead>
-    <tr>
-      <th>Local</th>
-      <th>Name</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
 <h2 class="text-center">부스 정보</h2>
+
+<%= form_tag search_posts_path, method: :get, role: "search" do |f|%>
+  <p>
+    <div class="col-lg-6 mb-3">
+      <div class="input-group">
+        <%= text_field_tag :search ,"",class: "form-control"%>
+        <span class="input-group-btn">
+          <%= submit_tag "검색", name: nil, class: "btn btn-secondary" %>
+        </span>
+      </div>
+    </div>
+<% end %>
+
+<div class="container">
+  <%= form_tag search_posts_path, method: :get, role: "search" do |f|%>
+    <div class="form-check">
+      <label class="form-check-label">
+        <%= check_box_tag :search, "낮부스" %> 낮부스
+      </label>
+      <label class="form-check-label">
+        <%= check_box_tag :search, "밤주점" %> 밤주점
+      </label>
+      <label class="form-check-label">
+        <%= check_box_tag :search, "주변주점" %> 주변주점
+      </label>
+      <label class="form-check-label">
+        <%= check_box_tag :search, "안주" %> 안주
+      </label>
+      <label class="form-check-label">
+        <%= check_box_tag :search, "술" %> 술
+      </label>
+      <label class="form-check-label">
+        <%= check_box_tag :search, "합석" %> 합석
+      </label>
+      <label class="form-check-label">
+        <%= check_box_tag :search, "스포츠" %> 스포츠
+      </label>
+      <label class="form-check-label">
+        <%= check_box_tag :search, "섹시" %> 섹시
+      </label>
+      <label class="form-check-label">
+        <%= check_box_tag :search, "캐릭터" %> 캐릭터
+      </label>
+    </div>
+      <%= submit_tag "검색", name: nil, class: 'btn btn-secondary btn-block' %>
+  <% end %>
+</div>
+
+
 
 <div class="container pt-3">
   <div class="row">
@@ -40,7 +59,7 @@
           <%= image_tag post.menuimg.url, class: "card-img-top" %>
           <div class="card-block">
             <h4 class="card-title font-weight-bold"><%=post.name%></h4>
-            <%= link_to '보러가기', post ,class: "btn btn-secondary"%>
+            <%= link_to '보러가기', post ,class: "btn btn-secondary", onclick: "setDraggable(true)"%>
           </div>
         </div>
       </div>

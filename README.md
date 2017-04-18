@@ -141,4 +141,6 @@ searchkick을 통해 DB에 저장된 좌표정보를 불러와 지도에 표시�
 
 ### 4월 18일
 
-대략적인 디자인은 수정했다. 모바일을 기준으로 디자인을 적용시켰다.
+대략적인 디자인은 수정완료. 모바일을 기준으로 디자인을 적용시켰다.(search form , checkbox, button)
+
+채팅을 할려면 터미널 창에서 `rackup private_pub.ru -s thin -E production`을 꼭 해줘야한다.
