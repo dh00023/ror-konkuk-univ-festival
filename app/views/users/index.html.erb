@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <!-- Table -->
-    <table class="table  table-sm">
+    <table class="table table-sm">
       <thead>
         <tr>
           <th>#</th>
@@ -16,7 +16,7 @@
             <td><%= user.id %></td>
             <td><%= image_tag user.image %></td>
             <td><%= user.username %></td>
-            <td><%= link_to "채팅하기", "#", class: "btn btn-outline-success start-conversation", "data-sid" => current_user.id, "data-rip" => user.id %></td>
+            <td><%= link_to "채팅하기", "#", class: "btn btn-secondary start-conversation", "data-sid" => current_user.id, "data-rip" => user.id %></td>
           </tr>
         <% end %>
       </tbody>
