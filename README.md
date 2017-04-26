@@ -36,8 +36,8 @@
 | 이름 | 속성 |
 |--------|--------|
 |id|integer|
-|localX|string|
-|localY|string|
+|x|string|
+|y|string|
 |name|string|
 |menuimg|img|
 |category|string|
