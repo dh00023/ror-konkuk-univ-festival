@@ -144,3 +144,20 @@ searchkick을 통해 DB에 저장된 좌표정보를 불러와 지도에 표시�
 대략적인 디자인은 수정완료. 모바일을 기준으로 디자인을 적용시켰다.(search form , checkbox, button)
 
 채팅을 할려면 터미널 창에서 `rackup private_pub.ru -s thin -E production`을 꼭 해줘야한다.
+
+
+### 4월 26일 
+
+- user flow 생각해두기
+- 프로젝트 가동시 필요한 커맨드
+
+```
+rails db:seed RAILS_ENV=development
+rails searchkick:reindex CLASS=Post
+```
+
+- AWS디플로이 할때 반드시 신경써야 하는부분
+    - 시크릿키들을 환경변수에 추가한다.
+    - assets가 엉키지 않아야 한다.
+    - 페이지 렌더링에 신경써야 한다.
+
