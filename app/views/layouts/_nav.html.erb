@@ -1,35 +1,52 @@
 <!-- navbar -->
-<nav class="navbar navbar-toggleable-md navbar-light bg-faded fixed-top sticky-top">
-  <div class="container mx-0 mx-sm-auto">
-    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <%= link_to "KUFESTIVAL", posts_path ,class: "navbar-brand"%>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ml-auto">
-        <% if user_signed_in? %>
-          <li class="nav-item active">
-            <a class="nav-item nav-link active" href="#"><%= "Hi, #{current_user.username}" %></a>
-          </li>
-        <% end %>
-        <li class="nav-item active">
-          <%= link_to "낮부스", search_posts_path(search: "낮부스"), class: "nav-link"%>
-        </li>
-        <li class="nav-item active">
-          <%= link_to "밤주점", search_posts_path(search: "밤주점"), class: "nav-link"%>
-        </li>
-        <% if user_signed_in? %>
-          <li class="nav-item active">
-            <%= link_to "번개", lighting_path ,class: "nav-link"%>
-          </li>
-          <li class="nav-item active"><%= link_to "로그아웃", destroy_user_session_path, method: :delete ,class: "nav-link" %>
-          </li>
-        <% else %>
-          <li class="nav-item active">
-            <%= link_to "번개", new_user_session_path ,class: "nav-link"%>
-          </li>
-        <% end %>
-      </ul>
-    </div>
+<nav class="navbar navbar-toggleable-md navbar-light fixed-top sticky-top">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item active">
+        <p id="notice"><%= notice %></p>
+
+        <h2 class="text-center">부스 정보</h2>
+
+        <div class="container">
+          <%= form_tag search_posts_path, method: :get, role: "search" do |f|%>
+            <div class="form-check">
+              <label class="form-check-label">
+                <%= check_box_tag :search, "낮부스" %> 낮부스
+              </label>
+              <label class="form-check-label">
+                <%= check_box_tag :search, "밤주점" %> 밤주점
+              </label>
+              <label class="form-check-label">
+                <%= check_box_tag :search, "주변주점" %> 주변주점
+              </label>
+              <label class="form-check-label">
+                <%= check_box_tag :search, "안주" %> 안주
+              </label>
+              <label class="form-check-label">
+                <%= check_box_tag :search, "술" %> 술
+              </label>
+              <label class="form-check-label">
+                <%= check_box_tag :search, "합석" %> 합석
+              </label>
+              <label class="form-check-label">
+                <%= check_box_tag :search, "스포츠" %> 스포츠
+              </label>
+              <label class="form-check-label">
+                <%= check_box_tag :search, "섹시" %> 섹시
+              </label>
+              <label class="form-check-label">
+                <%= check_box_tag :search, "캐릭터" %> 캐릭터
+              </label>
+            </div>
+              <%= submit_tag "검색", name: nil, class: 'btn btn-secondary btn-block' %>
+          <% end %>
+        </div>
+
+      </li>
+    </ul>
   </div>
 </nav>
