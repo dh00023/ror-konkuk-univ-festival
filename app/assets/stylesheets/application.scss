@@ -13,11 +13,21 @@
  *= require_tree .
  *= require_self
  */
- @import "bootstrap";
+
+@import "bootstrap";
+* { font-family: 'Spoqa Han Sans', 'Sans-serif'; }
 
 body{
-  background-color: #fff;
+  background-color: #000;
   color: #000;
+}
+
+a{
+  color:inherit;
+}
+a:hover, a:focus, a:active{
+  color:inherit;
+  text-decoration: none;  
 }
 
 img{
@@ -25,4 +35,40 @@ img{
 }
 .card-img-top{
 	height: 200px;
+}
+.card {
+  padding: 20px;
+  background-color: #303741;
+  color: #fff;
+}
+
+#btn-top{
+  width: 48px;
+  height: 48px;
+  background-color: #e91e63;
+  position: fixed;
+  right: 24px;
+  bottom: 40px;
+  border-radius: 100%;
+  z-index: 1000;
+  box-shadow: 0 0px 15px 3px rgba(255, 0, 87, 0.41);
+
+  font-size: 27px;
+  color: #fff;
+  line-height: 44px;
+  text-align: center;
+}
+
+.modal-header{
+  border-bottom-width: 0px;
+}
+
+.modal-footer{
+  border-top-width: 0px;
+}
+
+.btn-round{
+  border-radius:30px;
+  background-color: #e91e63;
+  box-shadow: 0 0px 15px 3px rgba(255, 0, 87, 0.41);
 }

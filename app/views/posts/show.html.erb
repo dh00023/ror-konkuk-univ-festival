@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
-
 <div class="container pt-3">
   <%= image_tag @post.menuimg.url%>
 
@@ -13,10 +11,7 @@
   <div id="map" style="max-width:100%;height:200px;"></div>
 </div>
 
-<br>
-
-<!-- 디플로이 할 때 edit 지우세여 -->
-<br>
+<%=render "chat"%>
 
 <script>
   (function(){

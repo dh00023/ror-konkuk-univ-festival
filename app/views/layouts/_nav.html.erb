@@ -1,5 +1,5 @@
 <!-- Button trigger modal -->
-<button type="button" class="btn" data-toggle="modal" data-target="#searchModal" style="background-color: transparent; color: #000; padding: 20px; border: 0; font-size: 20px;">
+<button type="button" class="btn" data-toggle="modal" data-target="#searchModal" style="background-color: #ffeb3b; color: #000; margin: 20px; border: 0; font-size: 20px;">
   <i class="fa fa-search" aria-hidden="true"></i>
 </button>
 
@@ -44,7 +44,11 @@
                 <%= check_box_tag :search, "캐릭터" %> 캐릭터
               </label>
             </div>
-              <%= submit_tag "검색", name: nil, class: 'btn btn-secondary btn-block' %>
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-block btn-round" style="color: #fff;">
+              <i class="fa fa-check" aria-hidden="true"></i>
+            </button>
+          </div>
           <% end %>
         </div>
       </div>
