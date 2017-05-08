@@ -1,28 +1,30 @@
-<div class="container">
-  <div class="row">
-    <div class="py-2 col-12 mx-auto">
-      <%if @posts.length == 0 %>
-        
-        <div style="color: #fff; text-align: center;">
-          <h1><i class="fa fa-exclamation-circle" aria-hidden="true"></i></h1> <br>
-          <h3>욕심보가 그득그득 하군요!</h3>
-          <p style="color: #555;">쫌만 덜 선택해볼까요?</p>
-        </div>
+<div class="row">
+  <div class="py-2 col-12 mx-auto">
+    <%if @posts.length == 0 %>
+      
+      <div style="color: #fff; text-align: center;">
+        <h1><i class="fa fa-exclamation-circle" aria-hidden="true"></i></h1> <br>
+        <h3>욕심보가 그득그득 하군요!</h3>
+        <p style="color: #555;">쫌만 덜 선택해볼까요?</p>
+      </div>
 
-      <%else%>
-        <% @posts.each do |post| %>
+    <%else%>
+      <h4 style="color: #ffeb3b; text-align: center; margin-bottom: 30px;"><%=@posts.length%>개의 주점이 검색됨</h4>
+      <% @posts.each do |post| %>
         
-          <%=link_to post do%>
-            <div class="card my-3">
-              <h4 class="card-title">귀여운 <%=post.name%></h4>
-            </div>
-          <%end%>
-          
-        <% end %>
+        <%=link_to post do%>
+          <div class="card my-3">
+            <h4>귀여운 <%=post.name%></h4>
+            <p>공학관앞</p>
+            <p class="mute">자세히보기 <i class="fa fa-angle-right" aria-hidden="true"></i></p>
+          </div>
+        <%end%>
+        
       <% end %>
-    </div>
+    <% end %>
   </div>
 </div>
+
 
 
 
