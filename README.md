@@ -219,3 +219,9 @@ rails searchkick:reindex CLASS=Post
 
 - 대략적인 UI, user-flow 적용.
 - TODO추가(에드센스)
+
+### 5월 8일 월요일
+
+- seed파일을 만들어두던가, json이나 엑셀같은거로 파일화 시켜서 불러와도 될것같다.
+- 이미지를 얼마나 사용해야하는지 고민.
+- 일단 search폼을 만들어야함. 모델확인.

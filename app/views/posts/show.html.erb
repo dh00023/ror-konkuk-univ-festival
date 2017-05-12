@@ -1,14 +1,20 @@
 <div class="container pt-3">
-  <%= image_tag @post.menuimg.url%>
 
   <div class="row">
-    <div class="card-block">
-      <h4 class="card-title"><%= @post.name %></h4>
-      <%= @post.category %>
-      <span class="font-weight-bold"><%= @post.feature %></span>
+    <div class="col-12">
+      <div class="card-top zigzag">
+        <h5 class="card-title">귀여운 <%= @post.name %></h5>
+      </div>
+      <div class="card">
+        <h5>특징</h5>
+        <span class="font-weight-bold"><%= @post.category %> + <%= @post.feature %></span>
+      </div>
+      <div class="card">
+        <div id="map" style="max-width:100%;height:200px;"></div>
+      </div>
     </div>
   </div>
-  <div id="map" style="max-width:100%;height:200px;"></div>
+
 </div>
 
 <%=render "chat"%>
@@ -35,27 +41,11 @@
     var imageSrc, markerImage, markerPosition;
     var imageOption = {offset: new daum.maps.Point(27, 69)}; // 마커이미지의 옵션입니다. 마커의 좌표와 일치시킬 이미지 안에서의 좌표를 설정합니다.
     //건국대학교
-    if (category == "주변"){
-      imageSrc = '<%= asset_path "near.png" %>'; // 마커이미지의 주소입니다
-      imageSize = new daum.maps.Size(62, 65); // 마커이미지의 크기입니다
-    }
-    //컴공주점
-    else if (category == "낮부스"){
-        imageSrc = '<%= asset_path "lunch.png" %>'; // 마커이미지의 주소입니다
-        imageSize = new daum.maps.Size(46, 69); // 마커이미지의 크기입니다
-    }
-    //응통주점
-    else if (category == "밤주점"){
-        imageSrc = '<%= asset_path "dinner.png" %>'; // 마커이미지의 주소입니다
-        imageSize = new daum.maps.Size(70, 69); // 마커이미지의 크기입니다
-    }
-    // 마커의 이미지정보를 가지고 있는 마커이미지를 생성합니다
-    markerImage = new daum.maps.MarkerImage(imageSrc, imageSize, imageOption);
+    
     markerPosition  = new daum.maps.LatLng(X, Y);
 
     var marker = new daum.maps.Marker({
       position: markerPosition,
-      image: markerImage
     });
     marker.setMap(map);
   }());

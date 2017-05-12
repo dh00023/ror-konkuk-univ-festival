@@ -24,7 +24,7 @@
   <body>
     <%= render 'layouts/nav' %>
 
-    <div class="container">
+    <div class="container mb-30">
       <% if alert %>
           <div class="alert alert-danger" role="alert"><%= alert %></div>
       <% end %>
@@ -35,7 +35,7 @@
       <%= yield %>
     </div>
 
-    
+    <div class="mb-30" style="text-align: center; color: rgba(0, 0, 0, 0.2);">건국대학교 멋쟁이사자처럼</div>
     <audio id="chatAudio"><source src="/sounds/notification.mp3" type="audio/mpeg"></audio>
     <script src="https://use.fontawesome.com/583147df63.js"></script>
     <script type="text/javascript" src="//apis.daum.net/maps/maps3.js?apikey=66403b863cfd40fe24effe89d42aca93"></script>

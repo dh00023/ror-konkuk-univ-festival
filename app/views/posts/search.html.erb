@@ -1,5 +1,5 @@
-<div class="row">
-  <div class="py-2 col-12 mx-auto">
+<div class="row" id="search">
+  <div class="card-wrap py-2 col-12 mx-auto">
     <%if @posts.length == 0 %>
       
       <div style="color: #fff; text-align: center;">
@@ -9,13 +9,15 @@
       </div>
 
     <%else%>
-      <h4 style="color: #ffeb3b; text-align: center; margin-bottom: 30px;"><%=@posts.length%>개의 주점이 검색됨</h4>
+      <div class="card-top zigzag">
+        <h5>총 <%=@posts.length%>개의 주점이 검색됨</h5>
+      </div>
       <% @posts.each do |post| %>
         
         <%=link_to post do%>
-          <div class="card my-3">
-            <h4>귀여운 <%=post.name%></h4>
-            <p>공학관앞</p>
+          <div class="card">
+            <h5>귀여운 <%=post.name%></h5>
+            <p>공학관앞 + 소주 4,000원</p>
             <p class="mute">자세히보기 <i class="fa fa-angle-right" aria-hidden="true"></i></p>
           </div>
         <%end%>

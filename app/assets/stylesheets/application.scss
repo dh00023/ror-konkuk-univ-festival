@@ -18,8 +18,14 @@
 * { font-family: 'Spoqa Han Sans', 'Sans-serif'; }
 
 body{
-  background-color: #000;
+  background-color: #e8e8e8;
   color: #000;
+}
+
+body:not(#foo) input[type='checkbox'] {
+  opacity: 0;
+  left: -999999px;
+  position: absolute;
 }
 
 a{
@@ -35,6 +41,10 @@ p{
 
 img{
 	max-width: 100%;
+}
+
+.mb-30{
+  margin-bottom: 30px
 }
 
 .mute{
@@ -53,34 +63,98 @@ img{
   padding: 20px;
   background-color: #fff;
   color: #000;
-  border-radius: 5px;
-  border:0;
+  border-radius: 15px;
+  border: 0;
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.1);
 }
 
+.card-wrap a:nth-child(2n+1)>.card{background-color: #fafafa;}
 
-#btn-top{
+.card-top{
+  background-color: #fff;
+  margin-bottom: 0px;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.card-top:before {
+  background:
+    linear-gradient(
+      45deg, transparent 33.333%,
+      #fff 33.333%, #fff 66.667%,
+      transparent 66.667%
+    ),
+    linear-gradient(
+      -45deg, transparent 33.333%,
+      #fff 33.333%, #fff 66.667%,
+      transparent 66.667%
+    );
+  background-size: 15px 30px;
+}
+
+.zigzag {
+  position: relative;
+  width: 100%;
+}
+
+.zigzag:before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: -9px;
+  width: 100%;
+  height: 10px;
+}
+
+.card-top > h5{
+  padding: 20px;
+  margin: 0;
+}
+
+#btn-chat{
   width: 48px;
   height: 48px;
-  background-color: #e91e63;
+  background-color: #FFEB3B;
   position: fixed;
   right: 24px;
   bottom: 40px;
   border-radius: 100%;
   z-index: 1000;
-  box-shadow: 0 0px 15px 3px rgba(255, 0, 87, 0.41);
-
+  box-shadow: 0 0px 15px 3px rgba(255, 235, 59, 0.56);
   font-size: 27px;
   color: #fff;
   line-height: 44px;
   text-align: center;
 }
 
+.modal-content{
+  background-color: #fafafa;
+}
 .modal-header{
   border-bottom-width: 0px;
 }
 
 .modal-footer{
   border-top-width: 0px;
+}
+
+.checkboxs{
+  overflow: hidden;
+}
+.checkbox{
+  background-color: #fff;
+  font-size: 18px;
+  padding: 20px;
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.is_checked{
+  background-color: #E91E63;
+  box-shadow: 0 0px 15px 3px rgba(255, 0, 87, 0.41);
+  color: #fff;
+  transition-duration: 0.2s;
+  -webkit-transition-duration: 0.2s;
 }
 
 .btn-round{
