@@ -3,10 +3,13 @@
   <div class="row">
     <div class="col-12">
       <div class="card-top zigzag">
-        <h5 class="card-title">귀여운 <%= @post.name %></h5>
+        <div style="padding: 20px;">
+          <h5 class="card-title"><%=@post.category%> <%= @post.name %></h5>
+          <p><%=@post.address%></p>
+        </div>
       </div>
       <div class="card">
-        <h5>특징</h5>
+        <div><h5>특징</h5>
         <span class="font-weight-bold"><%= @post.category %> + <%= @post.feature %></span>
       </div>
       <div class="card">
@@ -21,28 +24,25 @@
 
 <script>
   (function(){
-    var X = "<%= @post.x %>";
-    var Y = "<%= @post.y %>";
-    var category = "<%= @post.category %>";
-    var mapContainer = document.getElementById('map');
-    var mapOptions = {
-      center: new daum.maps.LatLng(X, Y),
-      level: 3
-    };
+    var x = "<%= @post.x %>", y = "<%= @post.y %>",
+        category = "<%= @post.category %>",
+        mapContainer = document.getElementById('map'),
+        mapOptions = {
+          center: new daum.maps.LatLng(x, y),
+          level: 3
+        },
+        markerPosition,
+        map = new daum.maps.Map(mapContainer, mapOptions);
 
-    var map = new daum.maps.Map(mapContainer, mapOptions);
-
-    // 버튼 클릭에 따라 지도 이동 기능을 막거나 풀고 싶은 경우에는 map.setDraggable 함수를 사용합니다
     function setDraggable(draggable) {
         // 마우스 드래그로 지도 이동 가능여부를 설정합니다
         map.setDraggable(draggable);
     }
 
-    var imageSrc, markerImage, markerPosition;
     var imageOption = {offset: new daum.maps.Point(27, 69)}; // 마커이미지의 옵션입니다. 마커의 좌표와 일치시킬 이미지 안에서의 좌표를 설정합니다.
     //건국대학교
     
-    markerPosition  = new daum.maps.LatLng(X, Y);
+    markerPosition  = new daum.maps.LatLng(x,y);
 
     var marker = new daum.maps.Marker({
       position: markerPosition,
