@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
+  
   def search
     if params[:search].present?
       @posts = Post.search(params[:search], operator: "or")
@@ -64,6 +65,6 @@ class PostsController < ApplicationController
     end
 
     def post_params
-      params.require(:post).permit(:name, :local, :category, :menuimg, :feature,:x,:y)
+      params.require(:post).permit(:name, :local, :category, :menuimg, :feature,:x,:y, :address)
     end
 end

@@ -1,25 +1,30 @@
 <div class="container">
   <div class="row">
-    <!-- Table -->
-    <table class="table table-sm">
-      <thead>
-        <tr>
-          <th>#</th>
-          <th>사용자</th>
-          <th></th>
-          <th></th>
-        </tr>
-      </thead>
-      <tbody>
-        <% @users.each do |user| %>
-          <tr>
-            <td><%= user.id %></td>
-            <td><%= image_tag user.image %></td>
-            <td><%= user.username %></td>
-            <td><%= link_to "채팅하기", "#", class: "btn btn-secondary start-conversation", "data-sid" => current_user.id, "data-rip" => user.id %></td>
-          </tr>
-        <% end %>
-      </tbody>
-    </table>
+
+    <div class="card-wrap py-2 col-12 mx-auto">
+
+      <div class="card-top zigzag">
+        <div style="padding: 20px;">
+          <h5>유의사항</h5>
+          <small>우선 이쁜말을 씁시다!</small>
+          <small>무례한 언행으로 불쾌감을 주는 경우 페북페이지로 스샷을 보내주세요.(목을 뽑아버리겠습니다💀)</small><br>
+          <small>회원 간 만남에 발생한 문제의 책임은 전적으로 여러분 본인에게 귀속되니 신중한 서비스 이용을 부탁드립니다.</small><br>
+        </div>
+      </div>
+      <div class="card">
+        <%=link_to "탈퇴하기👋(재가입불가)" , destroy_user_session_path, method: :delete%>
+      </div>
+      <% @users.each do |user| %>
+        <div class="card">
+          <div class="media">
+            <%= image_tag user.image , class: "d-flex mr-3", style: "width: 32px;"%>
+            <div class="media-body">
+              <%= link_to user.username + "님과 채팅하기", "#", class: "start-conversation", "data-sid" => current_user.id, "data-rip" => user.id %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+
+    </div>
   </div>
 </div>

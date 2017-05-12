@@ -1,5 +1,11 @@
-<div id="btn-chat">
+<%if current_user%>
   <%= link_to lighting_path do%>
-    <i class="fa fa-bolt" aria-hidden="true"></i>
+    <%= image_tag current_user.image , id: "btn-chat-image"%>
   <%end%>
-</div>
+<%else%>
+  <div id="btn-chat">
+    <%= link_to lighting_path do%>
+      <i class="fa fa-bolt" aria-hidden="true"></i>
+    <%end%>
+  </div>
+<%end%>

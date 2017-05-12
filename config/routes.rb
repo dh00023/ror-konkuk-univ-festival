@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
   devise_for :users, controllers: {:omniauth_callbacks => 'omniauth_callbacks', :registrations => 'registrations'}
 
-  resources :posts do
+  resources :posts, except: [:edit, :destroy] do
     collection do
-     get 'search'
+      get 'search'
     end
   end
 
@@ -13,4 +13,5 @@ Rails.application.routes.draw do
   resources :conversations do
     resources :messages
   end
+  
 end

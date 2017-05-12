@@ -43,6 +43,32 @@ img{
 	max-width: 100%;
 }
 
+.gradientBackground{
+  background: linear-gradient(270deg, #c303a6, #3525d2);
+  background-size: 400% 400%;
+    
+  -webkit-animation: gradientBackground 30s ease infinite;
+  -moz-animation: gradientBackground 30s ease infinite;
+  animation: gradientBackground 30s ease infinite;
+}
+
+
+@-webkit-keyframes gradientBackground {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@-moz-keyframes gradientBackground {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@keyframes gradientBackground {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+
 .mb-30{
   margin-bottom: 30px
 }
@@ -107,7 +133,7 @@ img{
   height: 10px;
 }
 
-.card-top > h5{
+.card-top > h5.card-title{
   padding: 20px;
   margin: 0;
 }
@@ -126,6 +152,18 @@ img{
   color: #fff;
   line-height: 44px;
   text-align: center;
+}
+
+#btn-chat-image{
+  width: 48px;
+  height: 48px;
+  position: fixed;
+  right: 24px;
+  bottom: 40px;
+  border-radius: 100%;
+  z-index: 1000;
+  color: #fff;
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.1);
 }
 
 .modal-content{

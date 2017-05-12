@@ -35,14 +35,15 @@ ActiveRecord::Schema.define(version: 20170417024120) do
     t.string   "name"
     t.float    "x"
     t.float    "y"
+    t.string   "address"
+    t.string   "category"
+    t.string   "feature"
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
     t.string   "menuimg_file_name"
     t.string   "menuimg_content_type"
     t.integer  "menuimg_file_size"
     t.datetime "menuimg_updated_at"
-    t.string   "category"
-    t.string   "feature"
   end
 
   create_table "users", force: :cascade do |t|
