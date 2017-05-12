@@ -1,52 +1,73 @@
-<!-- navbar -->
-<nav class="navbar navbar-toggleable-md navbar-light fixed-top sticky-top">
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+<!-- Button trigger modal -->
+<button type="button" class="btn" data-toggle="modal" data-target="#searchModal" style="background-color: #fff; color: #000; margin: 15px; border: 0; font-size: 20px; border-radius: 0;
+  position: sticky;
+  z-index: 990;
+  top: 0px;
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.1);
+  ">
+  <i class="fa fa-search" aria-hidden="true"></i>
+</button>
 
-  <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav ml-auto">
-      <li class="nav-item active">
-        <p id="notice"><%= notice %></p>
+<!-- Modal -->
+<div class="modal fade" id="searchModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
 
-        <h2 class="text-center">부스 정보</h2>
-
-        <div class="container">
+      <div class="modal-body" style="padding-top:0;">
+         <div class="container">
           <%= form_tag search_posts_path, method: :get, role: "search" do |f|%>
-            <div class="form-check">
-              <label class="form-check-label">
-                <%= check_box_tag :search, "낮부스" %> 낮부스
+
+            <div id="checkboxs" class="form-check row" style="text-align: center;">
+              <label class="checkbox col-12">
+                <%= check_box_tag :search, "낮부스"%> <strong>낮</strong>에도 재미난게 많다구!
               </label>
-              <label class="form-check-label">
-                <%= check_box_tag :search, "밤주점" %> 밤주점
+              <label class="checkbox col-12">
+                <%= check_box_tag :search, "밤주점" %> 무슨소리! 축제는 <strong>밤</strong>이지~!
               </label>
-              <label class="form-check-label">
-                <%= check_box_tag :search, "주변주점" %> 주변주점
+              
+              <label class="checkbox col-12">
+                <%= check_box_tag :search, "귀여운" %>🐶&nbsp; 귀여운 컨셉 🐼
               </label>
-              <label class="form-check-label">
-                <%= check_box_tag :search, "안주" %> 안주
+              <label class="checkbox col-12">
+                <%= check_box_tag :search, "헌팅술집" %> 혼자왔다 둘이 나가는 💑
               </label>
-              <label class="form-check-label">
-                <%= check_box_tag :search, "술" %> 술
+              <label class="checkbox col-12">
+                <%= check_box_tag :search, "섹시한" %>🙈 💋
               </label>
-              <label class="form-check-label">
-                <%= check_box_tag :search, "합석" %> 합석
+              <label class="checkbox col-12">
+                <%= check_box_tag :search, "신나는" %> 신나는 분위기 🎶
               </label>
-              <label class="form-check-label">
-                <%= check_box_tag :search, "스포츠" %> 스포츠
-              </label>
-              <label class="form-check-label">
-                <%= check_box_tag :search, "섹시" %> 섹시
-              </label>
-              <label class="form-check-label">
-                <%= check_box_tag :search, "캐릭터" %> 캐릭터
+              <label class="checkbox col-12">
+                <%= check_box_tag :search, "정신나간" %> 🚨 오늘만 사는 당신은 위한 !
               </label>
             </div>
-              <%= submit_tag "검색", name: nil, class: 'btn btn-secondary btn-block' %>
+
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-block btn-round" style="color: #fff;">
+              <i class="fa fa-check" aria-hidden="true"></i>
+            </button>
+          </div>
           <% end %>
         </div>
+      </div>
 
-      </li>
-    </ul>
+    </div>
   </div>
-</nav>
+</div>
+
+<script>
+(function(){
+  var checkboxs = document.getElementById("checkboxs");
+
+  checkboxs.addEventListener("click", function(e){
+    var target = e.target || e.srcElement;
+    target.classList.toggle("is_checked");
+  },true);
+
+})();
+</script>

@@ -6,9 +6,6 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <meta content='<%= user_signed_in? ? current_user.id : "" %>' name='user-id'/>
-    <script src="https://use.fontawesome.com/583147df63.js"></script>
-    <script type="text/javascript" src="//apis.daum.net/maps/maps3.js?apikey=66403b863cfd40fe24effe89d42aca93"></script>
-
     <title>Festival</title>
     <%= csrf_meta_tags %>
 
@@ -20,12 +17,14 @@
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <!-- spoqa font -->
+    <link href='//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css' rel='stylesheet' type='text/css'>
   </head>
 
   <body>
     <%= render 'layouts/nav' %>
 
-    <div class="container mt-5">
+    <div class="container mb-30">
       <% if alert %>
           <div class="alert alert-danger" role="alert"><%= alert %></div>
       <% end %>
@@ -35,7 +34,10 @@
 
       <%= yield %>
     </div>
-    <audio id="chatAudio"><source src="/sounds/notification.mp3" type="audio/mpeg"></audio>
 
+    <div class="mb-30" style="text-align: center; color: rgba(0, 0, 0, 0.2);">건국대학교 멋쟁이사자처럼</div>
+    <audio id="chatAudio"><source src="/sounds/notification.mp3" type="audio/mpeg"></audio>
+    <script src="https://use.fontawesome.com/583147df63.js"></script>
+    <script type="text/javascript" src="//apis.daum.net/maps/maps3.js?apikey=66403b863cfd40fe24effe89d42aca93"></script>
   </body>
 </html>

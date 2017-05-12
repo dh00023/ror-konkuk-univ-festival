@@ -1,1 +1,22 @@
-<h1>오빠랑 미연이가 꾸밀곳~</h1>
+<div class="row" id="search">
+  <div class="card-wrap py-2 col-12 mx-auto">
+      <div class="card-top zigzag">
+        <h5>총 <%=@posts.length%>개의 주점이 대기중</h5>
+      </div>
+      <% @posts.each do |post| %>
+        
+        <%=link_to post do%>
+          <div class="card">
+            <h5>귀여운 <%=post.name%></h5>
+            <p>공학관앞 + 소주 4,000원</p>
+            <p class="mute">자세히보기 <i class="fa fa-angle-right" aria-hidden="true"></i></p>
+          </div>
+        <%end%>
+      <% end %>
+  </div>
+</div>
+
+
+
+
+<%=render "chat"%>

@@ -1,15 +1,33 @@
-<div class="container">
-  <div class="row">
-    <% @posts.each do |post| %>
-      <div class="py-2 col-8 col-sm-4 col-md-3 col-lg-2 mx-auto">
-        <div class="card text-center">
-          <%= image_tag post.menuimg.url, class: "card-img-top" %>
-          <div class="card-block">
-            <h4 class="card-title font-weight-bold"><%=post.name%></h4>
-            <%= link_to '보러가기', post ,class: "btn btn-secondary", onclick: "setDraggable(true)"%>
-          </div>
-        </div>
+<div class="row" id="search">
+  <div class="card-wrap py-2 col-12 mx-auto">
+    <%if @posts.length == 0 %>
+      
+      <div style="color: #fff; text-align: center;">
+        <h1><i class="fa fa-exclamation-circle" aria-hidden="true"></i></h1> <br>
+        <h3>욕심보가 그득그득 하군요!</h3>
+        <p style="color: #555;">쫌만 덜 선택해볼까요?</p>
       </div>
+
+    <%else%>
+      <div class="card-top zigzag">
+        <h5>총 <%=@posts.length%>개의 주점이 검색됨</h5>
+      </div>
+      <% @posts.each do |post| %>
+        
+        <%=link_to post do%>
+          <div class="card">
+            <h5>귀여운 <%=post.name%></h5>
+            <p>공학관앞 + 소주 4,000원</p>
+            <p class="mute">자세히보기 <i class="fa fa-angle-right" aria-hidden="true"></i></p>
+          </div>
+        <%end%>
+        
+      <% end %>
     <% end %>
   </div>
 </div>
+
+
+
+
+<%=render "chat"%>
