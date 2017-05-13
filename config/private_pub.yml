@@ -5,6 +5,6 @@ test:
   server: "http://localhost:9292/faye"
   secret_token: "secret"
 production:
-  server: "http://example.com/faye"
+  server: "http://thisfestivalfor.me/faye"
   secret_token: "9a6d9a295119e981acc540fe2449be3b0c44f81b7767d335e01bfc2eaf4df5d6"
   signature_expiration: 3600 # one hour
