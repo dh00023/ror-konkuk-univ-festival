@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(version: 20170417024120) do
     t.string   "name"
     t.float    "x"
     t.float    "y"
+    t.string   "dn"
     t.string   "address"
     t.string   "category"
     t.string   "feature"

@@ -294,6 +294,7 @@ rails db:migrate RAILS_ENV=production
 rails db:seed RAILS_ENV=production #혹은 적절한 디비생성
 rails searchkick:reindex CLASS=Post RAILS_ENV=production
 
+RAILS_ENV=production rake db:drop DISABLE_DATABASE_ENVIRONMENT_CHECK=1 #db:drop
 
 rake assets:precompile #코드 수정시
 sudo /opt/nginx/sbin/nginx -s reload #confif 수정시
@@ -303,12 +304,12 @@ rackup private_pub.ru -s thin -E production #채팅
 
 
 
-####TODO
+#### TODO
 - roo gem으로 디비를 만들어서 구글스프레드시트랑 연동시키고, 필요할때마다 불러온다.
     + posts_controller이던 어디던에서 roogem을 통해 구글스프레드시트를 불러와야한다.
     + 저게 되는지부터 확인해야한다 안되면 그냥 손으로 치는수밖에
     + 아니 그냥 귀찮으니까 손으로 치자 빡친다.
-- 불러올때 서버재시작 순서대로 진행해야함.
+- 불러올때 서버재시작 순서대로 진행해야함.(융통성있게)
 - 프리컴파일할경우에는 public폴더내에 이는 잡다한걸 지워줄것.
 
-
+아마끝
