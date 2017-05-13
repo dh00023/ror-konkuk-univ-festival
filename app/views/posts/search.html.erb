@@ -10,7 +10,9 @@
 
     <%else%>
       <div class="card-top zigzag">
-        <h5>총 <%=@posts.length%>개의 주점이 검색됨</h5>
+        <div style="padding: 20px;">
+          <h5>총 <%=@posts.length%>개의 주점이 검색됨</h5>
+        </div>
       </div>
       <% @posts.each do |post| %>
         
