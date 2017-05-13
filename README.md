@@ -243,17 +243,13 @@ rails searchkick:reindex CLASS=Post
 
 ### 5월 13일 토요일
 
-- 모델 수정하기 o
-- aws에 올려야 가능한것들이 대부분.
-
-####TODO
-
-- 도메인 구매 & 연결
-- 구글애널리틱스
-- 구글애드센스(만약 내블로그가 빨리 통과한다면 이쪽으로 하는게 좋을듯.)
+- 모델 수정하기 o address,category,feature,x,y,name
+- 도메인 구매 & 연결 ㅇ
+- 구글애널리틱스 o bbooya
+- 구글애드센스(만약 내블로그가 빨리 통과한다면 이쪽으로 하는게 좋을듯.) x
 - 초기화면 다운로드 속도 개선 x
-- 다음맵 url수정 
-- aws올리기
+- 다음맵 url수정 ㅇ 다음계정
+- aws올리기 o project42da..
 
 
 ```
@@ -284,5 +280,35 @@ rails s -b 0.0.0.0은 돌아가서 확인
         * elasticsearch-2.0.0.deb  hanproto 이렇게 되어있음.
 
 
+```
+rails searchkick:reindex CLASS=Post RAILS_ENV=production #이것을 해줘야 서치킥500에러가 안난다.
+```
+
+
+### 서버재시작시 순서
+
+```sh
+sudo service elasticsearch status
+sudo service elasticsearch restart
+rails db:migrate RAILS_ENV=production
+rails db:seed RAILS_ENV=production #혹은 적절한 디비생성
+rails searchkick:reindex CLASS=Post RAILS_ENV=production
+
+
+rake assets:precompile #코드 수정시
+sudo /opt/nginx/sbin/nginx -s reload #confif 수정시
+touch tmp/restart.txt #서버재시작
+rackup private_pub.ru -s thin -E production #채팅
+```
+
+
+
+####TODO
+- roo gem으로 디비를 만들어서 구글스프레드시트랑 연동시키고, 필요할때마다 불러온다.
+    + posts_controller이던 어디던에서 roogem을 통해 구글스프레드시트를 불러와야한다.
+    + 저게 되는지부터 확인해야한다 안되면 그냥 손으로 치는수밖에
+    + 아니 그냥 귀찮으니까 손으로 치자 빡친다.
+- 불러올때 서버재시작 순서대로 진행해야함.
+- 프리컴파일할경우에는 public폴더내에 이는 잡다한걸 지워줄것.
 
 
