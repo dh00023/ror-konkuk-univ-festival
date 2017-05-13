@@ -254,3 +254,35 @@ rails searchkick:reindex CLASS=Post
 - 초기화면 다운로드 속도 개선 x
 - 다음맵 url수정 
 - aws올리기
+
+
+```
+sudo service elasticsearch status #이렇게 쳤더니 뭔가 되고있는것 같아서
+sudo service elasticsearch start #이렇게 했더니 아무것도 안뜬다 왠지 뭔가 되는것 같아서 페스
+```
+```
+rails db:seed RAILS_ENV=development #여전히 안되고 
+rails s -b 0.0.0.0은 돌아가서 확인
+```
+
+
+
+- 뭔일인지 6개나되는 컴공과 주점이 존재하고,
+- 아무래도 컴공과쯤에서 에러가 발생해 더이상 입력이 안된듯.
+    + 확인해보니 한줄씩입력하면 들어가긴 하는데 정신나간 Faraday ConnactionFailed 9200포트연결이 안됐다는둥 개소리하는거가 자꾸나옴.
+- 다음맵에서 오류가 쏟아지고 있고 그건 당연하지 패스
+- 일단 단서는 몇개 있다.
+    + 포트 9200에 뭔가 문제가 있고 나는 일단 이걸 열어놨으나 소용없다.
+    + `sudo vim /etc/elasticsearch/elasticsearch.yml` 명령을 통해 내용을 일부 수정힐수 있다. 아래와 같거나 비슷한것들.
+        * 
+        ```
+        network.bind_host: localhost
+        network.host: [_ip_address_]
+        ```
+    + `curl localhost:9200` 명령을 치면 json으로 결과가 떠야한다.
+    + 한그릇 시절에는 파일을 루트에 직접 다운받아서 설치한것으로 보인다.도대체 어떻게 한걸까..
+        * elasticsearch-2.0.0.deb  hanproto 이렇게 되어있음.
+
+
+
+
