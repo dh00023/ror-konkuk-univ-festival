@@ -8,8 +8,8 @@
 
 
 
-Post.create(name: "15일", x: "37.54018303512272", y: "127.07388430106799", dn: "", category: "라인업", feature: "AKMU, Tiger JK, T, Bizzy, Unnies", address: "입학정보관 동생대 사이")
-Post.create(name: "16일", x: "37.54018303512272", y: "127.07388430106799", dn: "", category: "라인업", feature: "BEWHY, Choi LB, Black Pink", address: "입학정보관 동생대 사이")
+Post.create(name: "15일", x: "37.54428028676707", y: "127.0774669171499", dn: "", category: "라인업", feature: "AKMU, Tiger JK, T, Bizzy, Unnies", address: "후문운동장 혹은 노천강당 추정")
+Post.create(name: "16일", x: "37.54428028676707", y: "127.0774669171499", dn: "", category: "라인업", feature: "BEWHY, Choi LB, Black Pink", address: "후문운동장 혹은 노천강당 추정")
 #밤주점
 Post.create(name: "영상학과", x: "37.54334517492009", y: "127.07796100285022", dn: "밤주점", category: "귀여운", feature: "영상댁", address: "부동산학관 앞")
 Post.create(name: "스마트운행체공학과(해리포차)", x: "37.54067813294063", y: "127.07460329850322", dn: "밤주점", category: "귀여운", feature: "해리포차와 술사조 기사단", address: "동생대와 상환대 사이")
