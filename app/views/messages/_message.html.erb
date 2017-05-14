@@ -4,7 +4,7 @@
   <div class="chatboxmessagecontent">
     <p><%= message.body %></p>
     <time datetime="<%= message.created_at %>" title="<%= message.created_at.localtime.strftime("%d %b  %Y at %I:%M%p") %>">
-      <%= message_interlocutor(message).username %> • <%= message.created_at.localtime.strftime("%H:%M %p") %>
+      <%= message_interlocutor(message).username %> • <%= message.created_at.localtime.strftime("%H:%M %p") %> 
     </time>
   </div>
 </li>
