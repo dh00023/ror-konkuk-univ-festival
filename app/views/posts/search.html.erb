@@ -18,8 +18,8 @@
         
         <%=link_to post do%>
           <div class="card">
-            <h5>귀여운 <%=post.name%></h5>
-            <p>공학관앞 + 소주 4,000원</p>
+            <h5><%=post.category%> <%=post.name%></h5>
+            <p><%=post.address%> + <%=post.feature%></p>
             <p class="mute">자세히보기 <i class="fa fa-angle-right" aria-hidden="true"></i></p>
           </div>
         <%end%>
