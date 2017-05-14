@@ -313,3 +313,8 @@ rackup private_pub.ru -s thin -E production #채팅
 - 프리컴파일할경우에는 public폴더내에 이는 잡다한걸 지워줄것.
 
 아마끝
+
+
+### 5월 14 진짜끝
+- 채팅빼고 올리기ㅠ
+
