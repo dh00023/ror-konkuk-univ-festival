@@ -66,8 +66,10 @@
 
   checkboxs.addEventListener("click", function(e){
     var target = e.target || e.srcElement;
-    target.classList.toggle("is_checked");
-  },true);
+    if(Array.prototype.includes.call(target.classList, "checkbox")){
+      target.classList.toggle("is_checked");
+    }
+  },true); 
 
 })();
 </script>
